@@ -26,20 +26,19 @@ class Apriori_Vertical:
     self.items = []
 
   def find_unique(self):
+    du = defaultdict(list)
     unique_items = []
     item_transaction = []
+
     for index, transaction in enumerate(self.data):
       for item in transaction:
-        if item in unique_items:
-          idx = unique_items.index(item)
-          item_transaction[idx].append(index)
-        else:
-          unique_items.append(item)
-          item_transaction.append([index])
-    for i in range(len(unique_items)):
-      a = []
-      a.append(unique_items[i])
-      unique_items[i] = a
+        du[item].append(index)
+    
+    for key, val in dict(du).items():
+      
+      unique_items.append([key])
+      item_transaction.append(val)
+
     self.items = unique_items
     self.transactions = item_transaction
   
@@ -114,4 +113,3 @@ class Apriori_Vertical:
     
 apr = Apriori_Vertical(data, 2, 1)
 apr.run_algo()
-
