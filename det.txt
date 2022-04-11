@@ -1,0 +1,14 @@
+ws2 - eeuc, man, supremum..., minkowski h=3, dissimilarity between binary attr
+
+ws3 - smoothing
+
+ws4 - hamming, jaccard, cosine, ...
+Correlation - same as cosine, but subtract mean of x and y at every term respectively.
+
+diss - r+s/q+r+s
+Jaccard - q/q+r+s
+Minkowski - h root[ (xi - xj) ^h + (yi - yj) ^h + (zi - zj) ^h]
+if h = 1, manhattan  -> sum of absolute differences
+if h = 2, euclidean
+h = infinity -> supremum -> max of absolute differences
+z score normalisation = x - mean / sigma
